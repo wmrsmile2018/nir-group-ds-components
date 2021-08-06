@@ -1,0 +1,80 @@
+@import "../../commonStyles.scss";
+
+.input-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .input-list__title {
+    color: $color-lightgray;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  .input-list-inputfield {
+    display: flex;
+    height: 40px;
+    font-size: 16px;
+    position: relative;
+
+    .input-list__button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      width: 94px;
+    }
+
+    & > input {
+      width: 100%;
+      height: 100%;
+      color: #585858;
+      padding: 10px;
+      padding-right: 104px;
+      border-radius: 5px;
+      border: 1px solid #a2a0a1;
+      background: none;
+      box-sizing: border-box;
+
+      &:hover {
+        border-color: #1ea7ff;
+      }
+      &:focus {
+        box-shadow: 0px 0px 1px 1px #1ea7ff;
+        border-color: #0e7abf;
+      }
+    }
+  }
+
+  .input-list-array {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      background-color: #0e7abe33;
+      color: $color-blue;
+      font-size: 16px;
+      line-height: 18px;
+      padding: 7px 10px 7px 8px;
+
+      .input-list-array-element__clear {
+        margin-left: 32px;
+        height: 12px;
+        width: 12px;
+        cursor: pointer;
+
+        &:hover {
+          fill: #f51010;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    // "outDir": "./dist/",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@src": ["src"],
+      "@src/*": ["src/*"],
+      "@dsComponents/*": ["src/DSComponents/*"]
+    }
+  },
+  // "files": ["src/index.tsx"],
+  "include": ["./src/**/*"],
+  "exclude": ["node_modues"]
+}
