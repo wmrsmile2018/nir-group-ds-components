@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import key from "weak-key";
 
 import { clearIcon } from "../../icons";
 import Button from "../../Button/";
@@ -65,7 +66,7 @@ export const InputList = ({
       </div>
       <div className="input-list-array">
         {list.map((el) => (
-          <div className="input-list-array-element" key={uuid()}>
+          <div className="input-list-array-element" key={key(el)}>
             <p className="input-list-array-element__text">{el}</p>
             <p
               className="input-list-array-element__clear"
