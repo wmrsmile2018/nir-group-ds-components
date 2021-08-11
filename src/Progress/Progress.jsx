@@ -8,12 +8,12 @@ import smallCompletedSvg from "./svg/smallCompleted.svg";
 
 import "./Progress.scss";
 
-const Progress = ({ steps, stepsCompleted, curStep }) => {
+const Progress = ({ steps, stepsCompleted, curStep, className }) => {
   const generateCode = () => {
     const array = steps.map((el, i) => {
       const mainObj = (
         <div className={`progress__piece ${el.size}`}>
-          {curStep === i ? (
+          {curStep - 1 === i ? (
             <div className="progress__information-wrapper">
               <div className="progress__information">
                 <p className="progress__text">{el.title}</p>
@@ -22,7 +22,7 @@ const Progress = ({ steps, stepsCompleted, curStep }) => {
             </div>
           ) : (
             <>
-              {((curStep === 0 && i === 1) || i === 9) && (
+              {((curStep - 1 === 0 && i === 1) || i === 9) && (
                 <div className={`progress__Leftline ${el.size}`}></div>
               )}
               <div
@@ -47,7 +47,7 @@ const Progress = ({ steps, stepsCompleted, curStep }) => {
       return i === 0 ? (
         <div key={el.id} className="progress__firstStep">
           <div className={`progress__piece ${el.size}`}>
-            {curStep === i ? (
+            {curStep - 1 === i ? (
               <div className="progress__information-wrapper">
                 <div className="progress__information">
                   <p className="progress__text">{el.title}</p>
@@ -102,7 +102,7 @@ const Progress = ({ steps, stepsCompleted, curStep }) => {
     ];
   };
 
-  return <div className="progress">{generateCode()}</div>;
+  return <div className={`progress ${className}`}>{generateCode()}</div>;
 };
 
 export default Progress;
