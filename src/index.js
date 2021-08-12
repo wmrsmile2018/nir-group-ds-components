@@ -1,19 +1,19 @@
-import BorderCard from "./BorderCard/";
-import Button from "./Button/";
-import Checkbox from "./Checkbox/";
-import FileTag from "./FileTag/";
-import InfoBlock from "./InfoBlock/";
-import InfoCard from "./InfoCard/";
-import Input from "./Input/";
-import Modal from "./Modal/";
-import PdfGenerator from "./PdfGenerator/";
-import PhotoCard from "./PhotoCard/";
-import Progress from "./Progress/";
-import RadioButton from "./RadioButton/";
-import Select from "./Select/";
-import Step from "./Step/";
-import Vote from "./Vote/";
-import TabsStepGroup from "./TabsStepGroup/";
+import BorderCard from "./BorderCard/BorderCard";
+import Button from "./Button/Button";
+import Checkbox from "./Checkbox/Checkbox";
+import FileTag from "./FileTag/FileTag.jsx";
+import InfoBlock from "./InfoBlock/InfoBlock";
+import InfoCard from "./InfoCard/InfoCard";
+import Input from "./Input/Input.jsx";
+import Modal from "./Modal/Modal";
+import PdfGenerator from "./PdfGenerator/PdfGenerator";
+import PhotoCard from "./PhotoCard/PhotoCard";
+import Progress from "./Progress/Progress";
+import RadioButton from "./RadioButton/RadioButton";
+import Select from "./Select/Select";
+import Step from "./Step/Step";
+import Vote from "./Vote/Vote";
+import TabsStepGroup from "./TabsStepGroup/TabsStepGroup";
 
 export {
   BorderCard,

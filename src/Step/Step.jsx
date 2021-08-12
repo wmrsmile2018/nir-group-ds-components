@@ -10,23 +10,6 @@ import { Phase } from "./Phase/";
 
 import "./Step.scss";
 
-Phase.propTypes = {
-  className: PropTypes.string,
-  modificators: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired,
-  handlers: PropTypes.node,
-  isFailuer: PropTypes.bool,
-};
-
-Phase.defaultProps = {
-  className: "",
-  modificators: "",
-  isFailuer: false,
-  handlers: null,
-};
-
 const Step = ({ className, title, date, modificators, tags, step, children }) => {
   const [isHide, setHide] = useReducer((state) => !state, false);
   const classes = classNames("step", className, modificators);

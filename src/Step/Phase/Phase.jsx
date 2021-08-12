@@ -84,7 +84,6 @@ Phase.propTypes = {
   modificators: PropTypes.string,
   title: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired,
   handler: PropTypes.func,
   showHandler: PropTypes.bool,
   isFailuer: PropTypes.bool,

@@ -65,7 +65,7 @@ export const InputList = ({
       </div>
       <div className="input-list-array">
         {list.map((el) => (
-          <div className="input-list-array-element">
+          <div className="input-list-array-element" key={uuid()}>
             <p className="input-list-array-element__text">{el}</p>
             <p
               className="input-list-array-element__clear"
