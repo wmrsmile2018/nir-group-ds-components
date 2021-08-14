@@ -1,15 +1,21 @@
 {
   "name": "nir-components",
-  "version": "1.0.29",
+  "version": "1.0.40",
   "description": "design system nir-group",
-  "main": "src/index.js",
+  "keywords": [
+    "react",
+    "components",
+    "ui"
+  ],
+  "private": false,
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production --node-env=production",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
-    "watch": "webpack --watch",
-    "start": "webpack serve"
+    "build": "rm -rf dist && NODE_ENV=production babel src/ --out-dir dist --copy-files"
   },
   "repository": {
     "type": "git",
@@ -68,10 +74,5 @@
     "react-modal-image": "^2.5.0",
     "uuid": "^8.3.2",
     "weak-key": "^1.0.2"
-  },
-  "files": [
-    "src",
-    "src/*/*.scss",
-    "src/*.scss"
-  ]
+  }
 }

@@ -1,0 +1,67 @@
+@import "../commonStyles.scss";
+
+.step {
+  width: $block-size;
+  display: flex;
+  // flex-direction: column;
+  padding: 17px 30px 30px 20px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.161);
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  .step-content {
+    width: 650px;
+  }
+
+  .step-header {
+    display: flex;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 22px;
+    border-bottom: 1px solid $color-gray-border;
+    width: fit-content;
+
+    margin-left: 20px;
+    color: $color-gray;
+
+    .step-header__arrow {
+      cursor: pointer;
+      margin-left: 14px;
+      stroke: $color-gray;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+
+      &:hover {
+        stroke: $color-ligh-blue;
+      }
+    }
+  }
+
+  .step-content__date {
+    margin-left: 25px;
+    // margin-bottom: 20px;
+    margin-top: 14px;
+  }
+
+  .step-content__information {
+    // .phase:not(:last-child) {
+    //   background: red;
+    // }
+
+    & > .phase {
+      margin-top: 20px;
+    }
+  }
+
+  .step__tag {
+    max-width: 448px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 13px;
+    height: fit-content;
+  }
+}

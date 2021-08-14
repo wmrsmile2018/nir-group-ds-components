@@ -1,0 +1,133 @@
+$color-white: #ffffff;
+$color-black: #121212;
+$color-red: #ba4545;
+$color-light-red: #f51010;
+
+$color-blue: #0e7abf;
+$color-ligh-blue: #1ea7ff;
+$color-dark-green: #238495;
+$color-light-green: #e8f2f4;
+
+$color-gray: #585858;
+$color-lightgray: #a2a0a1;
+$color-gray-border: #707070;
+
+$block-size: 1200px;
+
+@mixin disable-mouse-over-input {
+  &:not(.disable):hover {
+    border-color: $color-lightgray;
+    fill: $color-lightgray;
+    stroke: $color-lightgray;
+  }
+  &:not(.disable):focus {
+    box-shadow: none;
+    border-color: $color-lightgray;
+    fill: $color-lightgray;
+    stroke: $color-lightgray;
+  }
+}
+
+@mixin mouse-over-input {
+  &:hover {
+    border-color: #1ea7ff;
+  }
+  &:focus {
+    // box-shadow: 0px 0px 1px 1px #1ea7ff;
+    border-color: #0e7abf;
+  }
+}
+
+.arrow-icon {
+  stroke: $color-lightgray;
+
+  &:hover {
+    stroke: $color-blue;
+  }
+
+  &.active {
+    transform: rotate(180deg);
+  }
+
+  &.disabled:hover {
+    stroke: $color-lightgray;
+  }
+}
+
+.clear-icon {
+  &:hover {
+    fill: $color-light-red;
+  }
+}
+
+// .ds-button-green:active {
+//   filter: drop-shadow(1px 2px 3px #238495);
+// }
+// .ds-button {
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+.ds-button-shadow {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+}
+
+.ds-button-hover:hover {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+// .ds-dotted-button-hover:hover {
+//   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.161);
+// }
+
+.ds-modal-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  padding-top: -150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-modal-mask-dark {
+  background: #121212b3;
+}
+
+.ds-button-active:active {
+  background: #f6f7f9;
+}
+
+.ds-button-blue {
+  border-radius: 5px;
+  border: none;
+  background: #0e7abf;
+  color: #fff;
+  height: 37px;
+}
+
+.ds-mg-btns-lst {
+  margin-bottom: 12px;
+}
+
+.ds-mgb-10 {
+  margin-bottom: 12px;
+}
+.ds-mgb-12 {
+  margin-bottom: 12px;
+}
+.ds-mgb-14 {
+  margin-bottom: 14px;
+}
+.ds-mgb-16 {
+  margin-bottom: 16px;
+}
+.ds-mgb-18 {
+  margin-bottom: 18px;
+}
+.ds-mgb-20 {
+  margin-bottom: 20px;
+}
