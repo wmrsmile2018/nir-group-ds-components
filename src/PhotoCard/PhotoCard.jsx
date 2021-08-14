@@ -1,7 +1,6 @@
 import React, { useMemo, useReducer } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { Lightbox } from "react-modal-image";
 
 import { PhotoGroup } from "./PhotoGroup/";
@@ -21,7 +20,7 @@ const constNames = {
 
 const PhotoCard = ({ className, isValid, modificators, imgUrl, ...attr }) => {
   const [showBox, dispatch] = useReducer((showBox) => !showBox, false);
-  const classes = classNames(
+  const classes = clsx(
     "photo-card",
     className,
     modificators,

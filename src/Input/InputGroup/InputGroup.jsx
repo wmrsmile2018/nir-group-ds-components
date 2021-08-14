@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import "./InputGroup.scss";
 
 export const InputGroup = ({ title, className, modificators, children }) => {
-  const classes = classNames("input-group", className, { [modificators]: modificators });
+  const classes = clsx("input-group", className, { [modificators]: modificators });
 
   return (
     <div className={classes}>

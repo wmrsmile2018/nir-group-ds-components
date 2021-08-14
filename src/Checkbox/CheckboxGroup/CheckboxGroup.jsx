@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import "./CheckboxGroup.scss";
 
 export const CheckboxGroup = ({ title, children, className, modificators }) => {
-  const classes = classNames("checkbox-group", className, modificators);
+  const classes = clsx("checkbox-group", className, modificators);
   return (
     <div className={classes}>
       <p className="checkbox-group__title">{title}</p>

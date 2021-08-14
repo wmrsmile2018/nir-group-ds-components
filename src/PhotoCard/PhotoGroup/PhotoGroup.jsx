@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import "./PhotoGroup.scss";
 
 export const PhotoGroup = ({ title, className, modificators, children }) => {
-  const classes = classNames("photo-group", className, modificators);
+  const classes = clsx("photo-group", className, modificators);
 
   return (
     <div className={classes}>

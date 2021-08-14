@@ -8,7 +8,7 @@ import { useFileTag } from "../FileTagContext";
 
 export const UploadFile = () => {
   const { onClick, title, subtitle, disabled, typeId, typeFile } = useFileTag();
-  const classes = classNames(
+  const classes = clsx(
     "template-tag",
     { "upload-file": typeFile === "pdf" },
     { "upload-photo": typeFile === "img" },

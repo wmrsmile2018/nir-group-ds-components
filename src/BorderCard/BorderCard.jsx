@@ -1,11 +1,11 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import "./BorderCard.scss";
 
 const BorderCard = ({ children, className, modificators, title, tags }) => {
-  const classes = classNames("border-card", className, modificators);
+  const classes = clsx("border-card", className, modificators);
   return (
     <div className={classes}>
       <div className="border-card-content">

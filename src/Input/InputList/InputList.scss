@@ -29,6 +29,8 @@
     }
 
     & > input {
+      @include mouse-over-input;
+
       width: 100%;
       height: 100%;
       color: #585858;
@@ -39,13 +41,13 @@
       background: none;
       box-sizing: border-box;
 
-      &:hover {
-        border-color: #1ea7ff;
-      }
-      &:focus {
-        box-shadow: 0px 0px 1px 1px #1ea7ff;
-        border-color: #0e7abf;
-      }
+      // &:hover {
+      //   border-color: #1ea7ff;
+      // }
+      // &:focus {
+      //   box-shadow: 0px 0px 1px 1px #1ea7ff;
+      //   border-color: #0e7abf;
+      // }
     }
   }
 

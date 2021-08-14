@@ -1,6 +1,5 @@
 import React, { useMemo, useReducer, useState, useRef } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import clsx from "clsx";
 import { v4 as uuid } from "uuid";
 
@@ -29,7 +28,7 @@ const Select = ({
   const [value, setValue] = useState(typeof state === "string" ? state : state[name], [state]);
   const [inputValue, setInputValue] = useState(value);
   const newId = useMemo(() => id || uuid(), []);
-  const classes = classNames("select", className, modificators, { disabled: disabled });
+  const classes = clsx("select", className, modificators, { disabled: disabled });
 
   const handleOnChange = ({ target }) => {
     setInputValue(target.value);

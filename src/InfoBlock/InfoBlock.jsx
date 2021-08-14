@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import "./InfoBlock.scss";
 
@@ -12,7 +12,7 @@ const getIsEmpty = (value) => {
 };
 
 const InfoBlock = ({ label, value, className, modificators }) => {
-  const classes = classNames("info-block", className, modificators);
+  const classes = clsx("info-block", className, modificators);
   const isEmptyValue = getIsEmpty(value);
   return (
     <p className={classes}>

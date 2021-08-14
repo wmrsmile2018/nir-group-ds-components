@@ -1,11 +1,11 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import "./DescriptionTag.scss";
 
 export const DescriptionTag = ({ className, children, modificators, prepared, date }) => {
-  const classes = classNames("description-tag", className, modificators);
+  const classes = clsx("description-tag", className, modificators);
   return (
     <div className={classes}>
       <div className="description-tag__content">{children}</div>

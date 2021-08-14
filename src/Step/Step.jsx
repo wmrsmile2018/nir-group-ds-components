@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+
 import clsx from "clsx";
 
 import InfoBlock from "../InfoBlock";
@@ -12,7 +12,7 @@ import "./Step.scss";
 
 const Step = ({ className, title, date, modificators, tags, step, children }) => {
   const [isHide, setHide] = useReducer((state) => !state, false);
-  const classes = classNames("step", className, modificators);
+  const classes = clsx("step", className, modificators);
   return (
     <div className={classes}>
       <div className="step-content">

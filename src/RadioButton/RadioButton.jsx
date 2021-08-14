@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { RadioGroup } from "./RadioGroup/";
 
@@ -9,7 +9,7 @@ import "./RadioButton.scss";
 
 export const RadioButton = ({ className, text, noBorder, disabled, id, ...rest }) => {
   const newId = useMemo(() => id || uuid(), []);
-  const classes = classNames(
+  const classes = clsx(
     "radio-button",
     className,
     { "radio-button--noborder": noBorder },

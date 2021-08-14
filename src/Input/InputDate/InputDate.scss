@@ -1,3 +1,5 @@
+@import "../../commonStyles.scss";
+
 .input-date {
   // height: 40px;
   .input-date__title {
@@ -36,13 +38,14 @@
     }
 
     &.react-date-picker--open {
-      .input-date__calendar-icon {
-        fill: #0e7abf;
-      }
-      .react-date-picker__wrapper {
-        box-shadow: 0px 0px 1px 1px #1ea7ff;
-        border-color: #0e7abf;
-      }
+      @include mouse-over-input;
+      // .input-date__calendar-icon {
+      //   fill: #0e7abf;
+      // }
+      // .react-date-picker__wrapper {
+      //   box-shadow: 0px 0px 1px 1px #1ea7ff;
+      //   border-color: #0e7abf;
+      // }
     }
   }
 

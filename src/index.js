@@ -34,6 +34,25 @@ export {
   TabsStepGroup,
 };
 
+export default {
+  BorderCard,
+  Button,
+  Checkbox,
+  FileTag,
+  InfoBlock,
+  InfoCard,
+  Input,
+  Modal,
+  PdfGenerator,
+  PhotoCard,
+  Progress,
+  RadioButton,
+  Select,
+  Step,
+  Vote,
+  TabsStepGroup,
+};
+
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import "./style.scss";

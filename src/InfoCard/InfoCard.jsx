@@ -1,11 +1,11 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import "./InfoCard.scss";
 
 const InfoCard = ({ children, className, modificators, title }) => {
-  const classes = classNames("info-card", className, modificators);
+  const classes = clsx("info-card", className, modificators);
   return (
     <div className={classes}>
       <div className="info-card__title"> {title}</div>

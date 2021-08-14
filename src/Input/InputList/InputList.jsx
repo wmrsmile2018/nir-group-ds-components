@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { clearIcon } from "../../icons";
@@ -22,7 +22,7 @@ export const InputList = ({
   const [value, setValue] = useState("");
   const [list, setList] = useState(state);
   const newId = useMemo(() => id || uuid(), []);
-  const classes = classNames("input-list", className, { [`${modificators}`]: modificators });
+  const classes = clsx("input-list", className, { [`${modificators}`]: modificators });
 
   const handleOnAdd = () => {
     const newValue = [...list, value];

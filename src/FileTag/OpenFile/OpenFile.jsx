@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import parse from "html-react-parser";
 
 import Button from "../../Button/";
@@ -8,7 +8,7 @@ import { clearIcon } from "../../icons";
 
 export const OpenFile = () => {
   const { title, subtitle, disabled, typeFile, src, onDelete } = useFileTag();
-  const classes = classNames(
+  const classes = clsx(
     "open-file",
     "template-tag",
     { "open-img": typeFile === "img" },

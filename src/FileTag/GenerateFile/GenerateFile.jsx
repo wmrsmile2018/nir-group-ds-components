@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import parse from "html-react-parser";
 import React, { useReducer } from "react";
 import PropTypes from "prop-types";
@@ -10,7 +10,7 @@ import { useFileTag } from "../FileTagContext";
 export const GenerateFile = ({ children }) => {
   const [show, setShow] = useReducer((show) => !show, false);
   const { title, subtitle, disabled } = useFileTag();
-  const classes = classNames("generate-file", "template-tag", "open-pdf");
+  const classes = clsx("generate-file", "template-tag", "open-pdf");
 
   return (
     <div className={classes}>

@@ -1,16 +1,30 @@
 import React, { useMemo, useEffect, useRef } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import autosize from "autosize";
 
 import "./AutoSizeInput.scss";
 
-export const AutoSizeInput = ({ className, modificators, title, state, onChange, name, id }) => {
+export const AutoSizeInput = ({
+  className,
+  modificators,
+  title,
+  value,
+  onChange,
+  name,
+  id,
+  ...rest
+}) => {
   const textarea = useRef(null);
-  const value = useMemo(() => (typeof state === "string" ? state : state[name]), [state]);
+  const val = useMemo(() => {
+    if (value === null) {
+      return undefined;
+    }
+    return typeof value === "string" ? value : value[name];
+  }, [value]);
   const newId = useMemo(() => id || uuid(), []);
-  const classes = classNames("auto-size-input", className, modificators);
+  const classes = clsx("auto-size-input", className, modificators);
 
   useEffect(() => {
     autosize(textarea);
@@ -28,7 +42,8 @@ export const AutoSizeInput = ({ className, modificators, title, state, onChange,
         onChange={onChange}
         name={name}
         id={newId}
-        value={value}
+        value={val}
+        {...rest}
       />
     </div>
   );
@@ -38,12 +53,18 @@ AutoSizeInput.propTypes = {
   className: PropTypes.string,
   modificators: PropTypes.string,
   title: PropTypes.string,
-  state: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  onChange: () => {},
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  onChange: PropTypes.func,
   name: PropTypes.string,
   id: PropTypes.string,
 };
 
 AutoSizeInput.defaultProps = {
   className: "",
+  modificators: "",
+  title: "",
+  value: null,
+  name: "",
+  id: "",
+  onChange: () => {},
 };

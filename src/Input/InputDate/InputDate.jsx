@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback } from "react";
 import DatePicker from "react-date-picker";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 
@@ -14,22 +14,26 @@ export const InputDate = ({
   id,
   name,
   modificators,
-  state,
+  value,
   onChange,
   ...rest
 }) => {
-  const value = useMemo(() => (state instanceof Date ? state : undefined), [state]);
-  const newId = useMemo(() => id || uuid(), []);
-  const classes = classNames("input-date", className, { [modificators]: modificators });
+  const val = useMemo(() => {
+    if (value === null) return null;
 
-  const handleOnChange = (data) => {
+    return value instanceof Date ? value : value[name];
+  }, [value]);
+  const newId = useMemo(() => id || uuid(), []);
+  const classes = clsx("input-date", className, { [modificators]: modificators });
+
+  const handleOnChange = useCallback((data) => {
     onChange({
       target: {
         value: data,
         name,
       },
     });
-  };
+  }, []);
 
   return (
     <div className={classes}>
@@ -39,7 +43,7 @@ export const InputDate = ({
       <DatePicker
         id={newId}
         onChange={handleOnChange}
-        value={value}
+        value={val}
         clearIcon={clearIcon("input-date__clear-icon")}
         calendarIcon={calendarIcon("input-date__calendar-icon")}
         {...rest}
@@ -54,7 +58,7 @@ InputDate.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
   modificators: PropTypes.string,
-  state: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   onChange: PropTypes.func,
 };
 
@@ -64,6 +68,6 @@ InputDate.defaultProps = {
   className: "",
   name: "",
   modificators: "",
-  state: {},
   onChange: () => {},
+  value: null,
 };

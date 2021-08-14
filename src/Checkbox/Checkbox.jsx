@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from "react";
 import { v4 as uuid } from "uuid";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { CheckboxContainer } from "./CheckboxContainer/";
@@ -23,7 +23,7 @@ const Checkbox = ({
   const flag = useMemo(() => (checked ? "active" : "inactive"), []);
   const newId = useMemo(() => id || uuid(), []);
   const inputRef = useRef(null);
-  const classes = classNames(
+  const classes = clsx(
     "checkbox",
     className,
     { isLeft: isLeft },

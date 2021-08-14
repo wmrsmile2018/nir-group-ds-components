@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import "./CheckboxContainer.scss";
 
@@ -11,7 +11,7 @@ export const CheckboxContainer = ({
   registration,
   modificators,
 }) => {
-  const classes = classNames("checkbox-container", className, modificators);
+  const classes = clsx("checkbox-container", className, modificators);
   return (
     <div className={classes}>
       <div className="checkbox__ontainer-wrapper">{children}</div>

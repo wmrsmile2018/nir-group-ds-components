@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 import { useSelect } from "../SelectContext";
@@ -6,7 +6,7 @@ import { useSelect } from "../SelectContext";
 import "./Option.scss";
 
 export const Option = ({ className, modificators, value, title, disabled }) => {
-  const classes = classNames("option", className, modificators, { disabled: disabled });
+  const classes = clsx("option", className, modificators, { disabled: disabled });
   const { onChange, onSelect, setValue, dispatch, name, inputValue, setInputValue } = useSelect();
 
   const handleOnClick = () => {

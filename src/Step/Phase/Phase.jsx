@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import clsx from "clsx";
 
 import InfoBlock from "../../InfoBlock/";
@@ -32,7 +31,7 @@ export const Phase = ({
   ...attr
 }) => {
   const { step } = useStep();
-  const classes = classNames(
+  const classes = clsx(
     "phase",
     className,
     modificators,

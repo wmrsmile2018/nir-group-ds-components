@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 import "./Button.scss";
@@ -32,7 +32,7 @@ const BUTTON_COLOR_CLASS = {
 };
 
 export const Button = ({ className, size, children, shadow, border, color, disabled, ...rest }) => {
-  const classes = classNames(
+  const classes = clsx(
     "button",
     className,
     { "disabled": disabled },

@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { v4 as uuid } from "uuid";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { InputGroup } from "./InputGroup/";
@@ -10,24 +10,22 @@ import { InputList } from "./InputList/";
 
 import "./Input.scss";
 
-const Input = ({ className, modificators, title, id, onChange, state, name, ...rest }) => {
-  const value = useMemo(() => (typeof state === "string" ? state : state[name]), [state]);
+const Input = ({ className, modificators, title, id, onChange, value, name, ...rest }) => {
+  const val = useMemo(() => {
+    if (value === null) {
+      return undefined;
+    }
+    return typeof value === "string" ? value : value[name];
+  }, [value]);
   const newId = useMemo(() => id || uuid(), []);
-  const classes = classNames("input", className, { [`${modificators}`]: modificators });
-
-  // const handleOnChange = ({ target }) => {
-  //   onChange({
-  //     ...state,
-  //     [name]: target.value,
-  //   });
-  // };
+  const classes = clsx("input", className, { [`${modificators}`]: modificators });
 
   return (
     <label className={classes}>
       <p className="input__title" htmlFor={newId}>
         {title}
       </p>
-      <input value={value} onChange={onChange} id={newId} name={name} {...rest} />
+      <input value={val} onChange={onChange} id={newId} name={name} {...rest} />
     </label>
   );
 };
@@ -44,7 +42,7 @@ Input.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
-  state: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   onChange: PropTypes.func,
 };
 
@@ -53,6 +51,6 @@ Input.defaultProps = {
   title: "",
   id: "",
   name: "",
-  state: "",
+  value: null,
   onChange: () => {},
 };

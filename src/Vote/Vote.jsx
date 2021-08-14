@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback } from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 
 import { RadioButton } from "../RadioButton/";
@@ -18,7 +18,7 @@ const Vote = ({ className, modificators, params, title, onChange }) => {
     vote: "",
   });
 
-  const classes = classNames("vote", className, modificators);
+  const classes = clsx("vote", className, modificators);
   const handleOnClick = useCallback(({ target }) => {
     if (target.value === "disagree") {
       setState({
