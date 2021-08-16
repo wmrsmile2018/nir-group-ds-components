@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import "./RadioGroup.scss";
 
 export const RadioGroup = ({ title, onChange, children, value, className }) => {
-  const classes = classNames("radio-group", className);
+  const classes = clsx("radio-group", className);
   return (
     <div className={classes} onChange={onChange} value={value}>
       <p className="radio-group__title">{title}</p>

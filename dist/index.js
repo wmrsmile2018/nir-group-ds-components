@@ -107,13 +107,13 @@ var _Button = _interopRequireDefault(require("./Button/Button"));
 
 var _Checkbox = _interopRequireDefault(require("./Checkbox/Checkbox"));
 
-var _FileTag = _interopRequireDefault(require("./FileTag/FileTag.jsx"));
+var _FileTag = _interopRequireDefault(require("./FileTag/FileTag"));
 
 var _InfoBlock = _interopRequireDefault(require("./InfoBlock/InfoBlock"));
 
 var _InfoCard = _interopRequireDefault(require("./InfoCard/InfoCard"));
 
-var _Input = _interopRequireDefault(require("./Input/Input.jsx"));
+var _Input = _interopRequireDefault(require("./Input/Input"));
 
 var _Modal = _interopRequireDefault(require("./Modal/Modal"));
 

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 
 import { DescriptionTag } from "./DescriptionTag/";
 import { FileTagContext } from "./FileTagContext";
@@ -25,7 +25,7 @@ const FileTag = ({
   typeFile, // для проверки на img или pdf
   onDelete, // для удаления добавленного файла
 }) => {
-  const classes = classNames("file-tag", className, modificators);
+  const classes = clsx("file-tag", className, modificators);
 
   return (
     <div className={classes}>
