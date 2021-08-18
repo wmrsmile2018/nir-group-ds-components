@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo, useRef } from "react";
 import PropTypes from "prop-types";
 
 import { TabsContext } from "./TabsContext";
-import { TabControl } from "./TabControl/TabControl";
+import { TabControl } from "./TabControl/";
 import { TabStep } from "./TabStep/";
 import { withHandlers } from "./withHandlers";
 
@@ -121,7 +121,7 @@ const TabsStepGroup = ({ render }) => {
   );
 };
 
-export default TabsStepGroup;
+export default React.memo(TabsStepGroup);
 
 TabsStepGroup.TabStep = TabStep;
 TabsStepGroup.withHandlers = withHandlers;

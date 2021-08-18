@@ -1,11 +1,13 @@
 import parse from "html-react-parser";
 import React, { useRef } from "react";
 import clsx from "clsx";
+import key from 'weak-key'
+
 
 import Button from "../../Button/";
 import { useFileTag } from "../FileTagContext";
 
-export const UploadFile = () => {
+const UploadFile = () => {
   const { onClick, title, subtitle, disabled, typeId, typeFile } = useFileTag();
   const classes = clsx(
     "template-tag",
@@ -25,10 +27,10 @@ export const UploadFile = () => {
   return (
     <div className={classes}>
       {typeId ? (
-        [
-          <p className="template-tag__title">{parse(title)}</p>,
-          <p className="template-tag__subtitle">{parse(subtitle)}</p>,
-        ]
+          <>
+            <p className="template-tag__title">{parse(title)}</p>
+            <p className="template-tag__subtitle">{parse(subtitle)}</p>
+          </>
       ) : (
         <>
           {typeFile === "pdf" && <div className="upload-file__image"></div>}
@@ -53,3 +55,6 @@ export const UploadFile = () => {
     </div>
   );
 };
+
+
+export default React.memo(UploadFile)

@@ -23,6 +23,8 @@ export const CheckboxContainer = ({
   );
 };
 
+// export default React.memo(CheckboxContainer)
+
 CheckboxContainer.propTypes = {
   children: PropTypes.node.isRequired,
   organization: PropTypes.string.isRequired,

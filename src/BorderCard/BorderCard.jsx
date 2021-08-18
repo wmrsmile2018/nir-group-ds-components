@@ -17,7 +17,7 @@ const BorderCard = ({ children, className, modificators, title, tags }) => {
   );
 };
 
-export default BorderCard;
+export default React.memo(BorderCard);
 
 BorderCard.propTypes = {
   children: PropTypes.node.isRequired,

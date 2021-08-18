@@ -5,7 +5,7 @@ import { Button } from "../../Button/Button";
 
 import "./TabControl.scss";
 
-export const TabControl = ({ disabled, shadow, className, text, ...rest }) => {
+const TabControl = ({ disabled, shadow, className, text, ...rest }) => {
   return (
     <Button
       size="M"
@@ -19,6 +19,8 @@ export const TabControl = ({ disabled, shadow, className, text, ...rest }) => {
     </Button>
   );
 };
+
+export default React.memo(TabControl)
 
 TabControl.propTypes = {
   text: PropTypes.string.isRequired,

@@ -48,7 +48,7 @@ export const Button = ({ className, size, children, shadow, border, color, disab
   );
 };
 
-export default Button;
+export default React.memo(Button);
 
 Button.propTypes = {
   className: PropTypes.string,

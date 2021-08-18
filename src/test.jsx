@@ -1,19 +1,6 @@
-/* eslint-disable no-alert */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-// import BorderCard from "./Components/BorderCard/";
-// import Checkbox from "./Components/Checkbox/";
-// import FileTag from "./Components/FileTag/";
-// import InfoBlock from "./Components/InfoBlock/";
-// import InfoCard from "./Components/InfoCard/";
-// import Input from "./Components/Input/";
-// import PhotoCard from "./Components/PhotoCard/";
-// import Progress from "./Components/Progress/";
-// import RadioButton from "./Components/RadioButton/";
-// import Select from "./Components/Select/";
-// import Step from "./Components/Step/";
-// import Vote from "./Components/Vote/";
+import key from 'weak-key'
+
 import {
   TabsStepGroup,
   BorderCard,
@@ -28,7 +15,7 @@ import {
   Select,
   Step,
   Vote,
-} from "./lib/";
+} from "./index";
 
 // import "./TestComponent.scss";
 
@@ -336,11 +323,11 @@ export const TestComponent = () => {
       stepsCompleted: [...steps.stepsCompleted].concat(steps.cur + 1),
     });
   };
-
+ 
   return (
     <div className="test-component">
       <div className="info-part">
-        {true && (
+        {false && (
           <TabsStepGroup
             render={(handlers, updateHandlers) =>
               tabs.map((el, i) => {
@@ -389,7 +376,7 @@ export const TestComponent = () => {
             <button onClick={handleOnClickNext}>Далее</button>
           </>
         )}
-        {false && (
+        {true && (
           <FileTagGroup title="Проект документа">
             <FileTag type="generate" title={"title"} subtitle={"subtitle"}>
               hello my dear
@@ -515,11 +502,10 @@ export const TestComponent = () => {
             )}
           </InfoCard>
         )}
-
         {false && (
           <BorderCard
             title="Сертификация продукции №009876 от 10.10.2020"
-            tags={Array(5).fill(<div className="test-tag"></div>)}
+            tags={Array.from(Array(5).keys(), (el) => <div key={key({[el.toString()]: el})} className="test-tag"></div>)}
           >
             <InfoBlock
               label={"Центральный орган систем"}
@@ -527,12 +513,13 @@ export const TestComponent = () => {
                 "Кольца опорно-направляющие тип I (с опорами скольжения), тип II (с опорами качения), тип III (с комбинированными опорами) asdsaa sda sdas das dsad ad sad asd для переходов магистральных"
               }
             />
-            {Array(5).fill(
-              <InfoBlock
-                label={"Центральный орган систем"}
-                value={"Кольца опорно-направляющие тип"}
-              />,
-            )}
+            {
+            Array.from(Array(5).keys(), (el) => <InfoBlock
+            key={key({[el.toString()]: el})}
+            label={"Центральный орган систем"}
+            value={"Кольца опорно-направляющие тип"}
+          />)
+            }
           </BorderCard>
         )}
       </div>

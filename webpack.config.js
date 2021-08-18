@@ -2,11 +2,13 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+  
 
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   // "externals": {
   //   react: {
   //     root: "React",
@@ -25,14 +27,24 @@ module.exports = {
   // },
 
   target: ["web", "es5"],
-  entry: "./src/index.js",
+  entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "nir-components.js",
     libraryTarget: "commonjs2",
   },
-  plugins: [new MiniCssExtractPlugin(), new CleanWebpackPlugin()],
-  devtool: false,
+  plugins: [   new HtmlWebpackPlugin({
+    template: "public/index.html",
+  }),new MiniCssExtractPlugin(), new CleanWebpackPlugin()],
+  devtool: 'source-map',
+  devServer: {
+    // contentBase: path.join(__dirname, "public/static"),
+    open: false,
+    publicPath: "/",
+    port: 3000,
+    hot: true,
+    historyApiFallback: true,
+  },
   stats: "normal",
   module: {
     rules: [

@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 
 import { CheckboxContainer } from "./CheckboxContainer/";
 import { CheckboxGroup } from "./CheckboxGroup/";
-
 import "./Checkbox.scss";
 
-const Checkbox = ({
+
+const Checkbox = React.memo(function({
   className,
   isLeft,
   title,
@@ -19,7 +19,7 @@ const Checkbox = ({
   modificators,
   id,
   disabled,
-}) => {
+}){
   const flag = useMemo(() => (checked ? "active" : "inactive"), []);
   const newId = useMemo(() => id || uuid(), []);
   const inputRef = useRef(null);
@@ -63,7 +63,7 @@ const Checkbox = ({
       {!isLeft && <label htmlFor={newId}>{title}</label>}
     </div>
   );
-};
+})
 
 export default Checkbox;
 

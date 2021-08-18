@@ -11,7 +11,7 @@ import { FileTagGroup } from "./FileTagGroup/";
 
 import "./FileTag.scss";
 
-const FileTag = ({
+const FileTag = React.memo(function({
   className,
   modificators,
   title,
@@ -24,7 +24,7 @@ const FileTag = ({
   type, // чтобы понять, генерировать, открывать или загружать
   typeFile, // для проверки на img или pdf
   onDelete, // для удаления добавленного файла
-}) => {
+}) {
   const classes = clsx("file-tag", className, modificators);
 
   return (
@@ -38,7 +38,7 @@ const FileTag = ({
       </FileTagContext.Provider>
     </div>
   );
-};
+})
 
 FileTag.GenerateFile = GenerateFile;
 FileTag.OpenFile = OpenFile;

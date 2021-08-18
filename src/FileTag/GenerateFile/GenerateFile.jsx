@@ -7,7 +7,7 @@ import Button from "../../Button/";
 import PdfGenerator from "../../PdfGenerator/";
 import { useFileTag } from "../FileTagContext";
 
-export const GenerateFile = ({ children }) => {
+const GenerateFile = ({ children }) => {
   const [show, setShow] = useReducer((show) => !show, false);
   const { title, subtitle, disabled } = useFileTag();
   const classes = clsx("generate-file", "template-tag", "open-pdf");
@@ -32,6 +32,8 @@ export const GenerateFile = ({ children }) => {
     </div>
   );
 };
+
+export default React.memo(GenerateFile)
 
 GenerateFile.propTypes = {
   children: PropTypes.node.isRequired,

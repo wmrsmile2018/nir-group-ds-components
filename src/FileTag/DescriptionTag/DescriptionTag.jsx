@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import "./DescriptionTag.scss";
 
-export const DescriptionTag = ({ className, children, modificators, prepared, date }) => {
+const DescriptionTag = ({ className, children, modificators, prepared, date }) => {
   const classes = clsx("description-tag", className, modificators);
   return (
     <div className={classes}>
@@ -22,6 +22,8 @@ export const DescriptionTag = ({ className, children, modificators, prepared, da
     </div>
   );
 };
+
+export default React.memo(DescriptionTag)
 
 DescriptionTag.propTypes = {
   className: PropTypes.string,

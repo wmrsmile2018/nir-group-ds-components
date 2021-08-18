@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import "./FileTagGroup.scss";
 
-export const FileTagGroup = ({ title, children, className, modificators }) => {
+const FileTagGroup = ({ title, children, className, modificators }) => {
   const classes = clsx("file-tag-group", className, modificators);
   return (
     <div className={classes}>
@@ -13,6 +13,8 @@ export const FileTagGroup = ({ title, children, className, modificators }) => {
     </div>
   );
 };
+
+export default React.memo(FileTagGroup)
 
 FileTagGroup.propTypes = {
   title: PropTypes.string,

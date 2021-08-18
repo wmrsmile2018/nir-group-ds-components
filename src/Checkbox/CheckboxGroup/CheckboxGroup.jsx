@@ -14,6 +14,8 @@ export const CheckboxGroup = ({ title, children, className, modificators }) => {
   );
 };
 
+// export default React.memo(CheckboxGroup)
+
 CheckboxGroup.propTypes = {
   title: PropTypes.string,
   className: PropTypes.string,

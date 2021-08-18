@@ -6,7 +6,7 @@ import Button from "../../Button/";
 import { useFileTag } from "../FileTagContext";
 import { clearIcon } from "../../icons";
 
-export const OpenFile = () => {
+const OpenFile = () => {
   const { title, subtitle, disabled, typeFile, src, onDelete } = useFileTag();
   const classes = clsx(
     "open-file",
@@ -39,3 +39,6 @@ export const OpenFile = () => {
     </div>
   );
 };
+
+
+export default React.memo(OpenFile)
