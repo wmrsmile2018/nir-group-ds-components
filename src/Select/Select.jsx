@@ -11,7 +11,7 @@ import { useOnClickOutside } from "../useHooks";
 
 import "./Select.scss";
 
-const Select = ({
+const Select = React.memo(({
   className,
   modificators,
   title,
@@ -78,7 +78,7 @@ const Select = ({
       )}
     </div>
   );
-};
+});
 
 export default Select;
 

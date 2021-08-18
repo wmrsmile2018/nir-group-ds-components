@@ -24,7 +24,7 @@ const InfoBlock = ({ label, value, className, modificators }) => {
   );
 };
 
-export default InfoBlock;
+export default React.memo(InfoBlock);
 
 InfoBlock.propTypes = {
   label: PropTypes.string,

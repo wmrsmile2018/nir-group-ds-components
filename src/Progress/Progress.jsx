@@ -105,4 +105,4 @@ const Progress = ({ steps, stepsCompleted, curStep, className }) => {
   return <div className={`progress ${className}`}>{generateCode()}</div>;
 };
 
-export default Progress;
+export default React.memo(Progress);

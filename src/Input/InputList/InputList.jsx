@@ -8,7 +8,7 @@ import Button from "../../Button/";
 
 import "./InputList.scss";
 
-export const InputList = ({
+const InputList = ({
   className,
   modificators,
   title,
@@ -81,6 +81,8 @@ export const InputList = ({
     </label>
   );
 };
+
+export default React.memo(InputList)
 
 InputList.propTypes = {
   className: PropTypes.string,

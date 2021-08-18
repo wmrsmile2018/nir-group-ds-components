@@ -7,7 +7,7 @@ import { RadioGroup } from "./RadioGroup/";
 
 import "./RadioButton.scss";
 
-export const RadioButton = ({ className, text, noBorder, disabled, id, ...rest }) => {
+const RadioButton = React.memo(({ className, text, noBorder, disabled, id, ...rest }) => {
   const newId = useMemo(() => id || uuid(), []);
   const classes = clsx(
     "radio-button",
@@ -27,7 +27,7 @@ export const RadioButton = ({ className, text, noBorder, disabled, id, ...rest }
       </span>
     </label>
   );
-};
+});
 
 export default RadioButton;
 

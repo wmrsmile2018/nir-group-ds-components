@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import "./RadioGroup.scss";
 
-export const RadioGroup = ({ title, onChange, children, value, className }) => {
+const RadioGroup = ({ title, onChange, children, value, className }) => {
   const classes = clsx("radio-group", className);
   return (
     <div className={classes} onChange={onChange} value={value}>
@@ -13,6 +13,8 @@ export const RadioGroup = ({ title, onChange, children, value, className }) => {
     </div>
   );
 };
+
+export default React.memo(RadioGroup)
 
 RadioGroup.propTypes = {
   onChange: PropTypes.func,

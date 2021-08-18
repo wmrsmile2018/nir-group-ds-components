@@ -60,6 +60,15 @@ $block-size: 1200px;
   }
 }
 
+input {
+  outline: none;
+  border: none;
+}
+
+p {
+  margin: 0;
+}
+
 // .ds-button-green:active {
 //   filter: drop-shadow(1px 2px 3px #238495);
 // }
@@ -69,65 +78,65 @@ $block-size: 1200px;
 //   justify-content: center;
 //   align-items: center;
 // }
-.ds-button-shadow {
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
-}
+// .ds-button-shadow {
+//   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+// }
 
-.ds-button-hover:hover {
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-}
+// .ds-button-hover:hover {
+//   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+// }
 
 // .ds-dotted-button-hover:hover {
 //   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.161);
 // }
 
-.ds-modal-container {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 1000;
-  top: 0;
-  padding-top: -150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+// .ds-modal-container {
+//   height: 100%;
+//   width: 100%;
+//   position: absolute;
+//   z-index: 1000;
+//   top: 0;
+//   padding-top: -150px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
-.ds-modal-mask-dark {
-  background: #121212b3;
-}
+// .ds-modal-mask-dark {
+//   background: #121212b3;
+// }
 
-.ds-button-active:active {
-  background: #f6f7f9;
-}
+// .ds-button-active:active {
+//   background: #f6f7f9;
+// }
 
-.ds-button-blue {
-  border-radius: 5px;
-  border: none;
-  background: #0e7abf;
-  color: #fff;
-  height: 37px;
-}
+// .ds-button-blue {
+//   border-radius: 5px;
+//   border: none;
+//   background: #0e7abf;
+//   color: #fff;
+//   height: 37px;
+// }
 
-.ds-mg-btns-lst {
-  margin-bottom: 12px;
-}
+// .ds-mg-btns-lst {
+//   margin-bottom: 12px;
+// }
 
-.ds-mgb-10 {
-  margin-bottom: 12px;
-}
-.ds-mgb-12 {
-  margin-bottom: 12px;
-}
-.ds-mgb-14 {
-  margin-bottom: 14px;
-}
-.ds-mgb-16 {
-  margin-bottom: 16px;
-}
-.ds-mgb-18 {
-  margin-bottom: 18px;
-}
-.ds-mgb-20 {
-  margin-bottom: 20px;
-}
+// .ds-mgb-10 {
+//   margin-bottom: 12px;
+// }
+// .ds-mgb-12 {
+//   margin-bottom: 12px;
+// }
+// .ds-mgb-14 {
+//   margin-bottom: 14px;
+// }
+// .ds-mgb-16 {
+//   margin-bottom: 16px;
+// }
+// .ds-mgb-18 {
+//   margin-bottom: 18px;
+// }
+// .ds-mgb-20 {
+//   margin-bottom: 20px;
+// }

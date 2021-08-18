@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import key from 'weak-key'
 
 import {
@@ -17,7 +17,7 @@ import {
   Vote,
 } from "./index";
 
-// import "./TestComponent.scss";
+import "./test.scss";
 
 const { TabStep, withHandlers } = TabsStepGroup;
 const { Phase } = Step;
@@ -28,7 +28,6 @@ const { Option } = Select;
 const { FileTagGroup, DescriptionTag } = FileTag;
 
 const { InputGroup, InputDate, AutoSizeInput, InputList } = Input;
-
 const style = {
   height: 1000,
   width: 800,
@@ -300,29 +299,28 @@ export const TestComponent = () => {
     list: ["test"],
   });
 
-  const handleOnChange = ({ target }) => {
-    console.log(state);
+  const handleOnChange = useCallback(({ target }) => {
     setState({
       ...state,
       [target.name]: target.value,
     });
-  };
+  }, [state]);
 
   const handleOnClick = ({ target }) => {
     window.target = target;
   };
 
-  const handleOnChangeVote = (data) => {
+  const handleOnChangeVote = useCallback((data) => {
     // console.log(`[${target.name}]: ${target.value}`);
     console.log(data);
-  };
+  }, []);
 
-  const handleOnClickNext = () => {
+  const handleOnClickNext = useCallback(() => {
     setSteps({
       cur: steps.cur + 1,
       stepsCompleted: [...steps.stepsCompleted].concat(steps.cur + 1),
     });
-  };
+  }, []);
  
   return (
     <div className="test-component">
@@ -341,7 +339,7 @@ export const TestComponent = () => {
             }
           />
         )}
-        {false && (
+        {true && (
           <Select
             title="Выбор схемы сертификации"
             name="select"
@@ -376,7 +374,7 @@ export const TestComponent = () => {
             <button onClick={handleOnClickNext}>Далее</button>
           </>
         )}
-        {true && (
+        {false && (
           <FileTagGroup title="Проект документа">
             <FileTag type="generate" title={"title"} subtitle={"subtitle"}>
               hello my dear
@@ -455,7 +453,7 @@ export const TestComponent = () => {
             title="Этап №13 Оценка соответствия"
             date="10.10.2020"
             step={2}
-            tags={Array(5).fill(<div className="test-tag"></div>)}
+            tags={Array.from(Array(5).keys(), (el) => <div key={key({[el.toString()]: el})} className="test-tag"></div>)}
           >
             <Phase
               index={1}
@@ -492,14 +490,13 @@ export const TestComponent = () => {
         )}
         {false && (
           <InfoCard title="Сертификация продукции №009876 от 10.10.2020">
-            {Array(5).fill(
-              <InfoBlock
+            {Array.from(Array(5).keys(), (el) => <InfoBlock
+                key={key({[el.toString()]: el})}
                 label={"Центральный орган систем"}
                 value={
                   "Кольца опорно-направляющие тип I (с опорами скольжения), тип II (с опорами качения), тип III (скомбиниров анными sadsads ad s"
                 }
-              />,
-            )}
+              />)}
           </InfoCard>
         )}
         {false && (
@@ -551,7 +548,7 @@ export const TestComponent = () => {
               className="parent"
               name="date"
               modificators="some-modificators"
-              state={state.date}
+              value={state.date}
               onChange={handleOnChange}
               title="сроки"
             />

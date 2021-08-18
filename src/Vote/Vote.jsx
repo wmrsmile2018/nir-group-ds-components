@@ -2,11 +2,10 @@ import React, { useMemo, useState, useCallback } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
-import { RadioButton } from "../RadioButton/";
+import RadioButton from "../RadioButton/";
 import { AutoSizeInput } from "../Input/AutoSizeInput/";
 
 import "./Vote.scss";
-
 const { RadioGroup } = RadioButton;
 
 const votingParametres = [{ id: "agree" }, { id: "disagree" }];
@@ -82,7 +81,7 @@ const Vote = ({ className, modificators, params, title, onChange }) => {
   );
 };
 
-export default Vote;
+export default React.memo(Vote);
 
 Vote.propTypes = {
   className: PropTypes.string,

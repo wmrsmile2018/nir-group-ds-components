@@ -10,7 +10,7 @@ import { InputList } from "./InputList/";
 
 import "./Input.scss";
 
-const Input = ({ className, modificators, title, id, onChange, value, name, ...rest }) => {
+const Input = React.memo (({ className, modificators, title, id, onChange, value, name, ...rest }) => {
   const val = useMemo(() => {
     if (value === null) {
       return undefined;
@@ -28,7 +28,7 @@ const Input = ({ className, modificators, title, id, onChange, value, name, ...r
       <input value={val} onChange={onChange} id={newId} name={name} {...rest} />
     </label>
   );
-};
+});
 
 export default Input;
 

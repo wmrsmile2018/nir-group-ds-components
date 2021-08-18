@@ -8,7 +8,7 @@ import { calendarIcon, clearIcon } from "../../icons";
 
 import "./InputDate.scss";
 
-export const InputDate = ({
+const InputDate = ({
   className,
   title,
   id,
@@ -51,6 +51,8 @@ export const InputDate = ({
     </div>
   );
 };
+
+export default React.memo(InputDate)
 
 InputDate.propTypes = {
   id: PropTypes.string,

@@ -47,7 +47,7 @@ const PdfGenerator = ({ func, children, fileName }) => {
   );
 };
 
-export default PdfGenerator;
+export default React.memo(PdfGenerator);
 
 // <Portal>
 //     </Portal>

@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import "./PhotoGroup.scss";
 
-export const PhotoGroup = ({ title, className, modificators, children }) => {
+const PhotoGroup = ({ title, className, modificators, children }) => {
   const classes = clsx("photo-group", className, modificators);
 
   return (
@@ -14,6 +14,8 @@ export const PhotoGroup = ({ title, className, modificators, children }) => {
     </div>
   );
 };
+
+export default React.memo(PhotoGroup)
 
 PhotoGroup.propTypes = {
   className: PropTypes.string,

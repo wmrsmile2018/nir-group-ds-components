@@ -5,16 +5,19 @@ import { useSelect } from "../SelectContext";
 
 import "./Option.scss";
 
-export const Option = ({ className, modificators, value, title, disabled }) => {
+const Option = ({ className, modificators, value, title, disabled }) => {
   const classes = clsx("option", className, modificators, { disabled: disabled });
   const { onChange, onSelect, setValue, dispatch, name, inputValue, setInputValue } = useSelect();
 
   const handleOnClick = () => {
-    setInputValue(title);
-    onChange({ name, value });
-    onSelect({ name, value });
-    setValue(value);
-    dispatch();
+    if(!disabled) {
+      setInputValue(title);
+      onChange({ name, value });
+      onSelect({ name, value });
+      setValue(value);
+      dispatch();
+    }
+    
   };
 
   return title.includes(inputValue) ? (
@@ -23,6 +26,8 @@ export const Option = ({ className, modificators, value, title, disabled }) => {
     </div>
   ) : null;
 };
+
+export default React.memo(Option)
 
 Option.propTypes = {
   className: PropTypes.string,

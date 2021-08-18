@@ -18,7 +18,7 @@ const constNames = {
   "comments": "Комментарии",
 };
 
-const PhotoCard = ({ className, isValid, modificators, imgUrl, ...attr }) => {
+const PhotoCard = React.memo(({ className, isValid, modificators, imgUrl, ...attr }) => {
   const [showBox, dispatch] = useReducer((showBox) => !showBox, false);
   const classes = clsx(
     "photo-card",
@@ -58,7 +58,7 @@ const PhotoCard = ({ className, isValid, modificators, imgUrl, ...attr }) => {
       </div>
     </div>
   );
-};
+});
 
 export default PhotoCard;
 

@@ -19,7 +19,7 @@ const constNames = {
 
 import "./Phase.scss";
 
-export const Phase = ({
+const Phase = ({
   className,
   modificators,
   title,
@@ -77,6 +77,8 @@ export const Phase = ({
     </div>
   );
 };
+
+export default React.memo(Phase)
 
 Phase.propTypes = {
   className: PropTypes.string,

@@ -13,7 +13,7 @@ const Modal = ({ className, children, idNode }) => {
   );
 };
 
-export default Modal;
+export default React.memo(Modal);
 
 Modal.propTypes = {
   className: PropTypes.string,

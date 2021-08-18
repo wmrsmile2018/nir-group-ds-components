@@ -6,7 +6,7 @@ import autosize from "autosize";
 
 import "./AutoSizeInput.scss";
 
-export const AutoSizeInput = ({
+const AutoSizeInput = ({
   className,
   modificators,
   title,
@@ -48,6 +48,8 @@ export const AutoSizeInput = ({
     </div>
   );
 };
+
+export default React.memo(AutoSizeInput)
 
 AutoSizeInput.propTypes = {
   className: PropTypes.string,

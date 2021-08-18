@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import "./InputGroup.scss";
 
-export const InputGroup = ({ title, className, modificators, children }) => {
+const InputGroup = ({ title, className, modificators, children }) => {
   const classes = clsx("input-group", className, { [modificators]: modificators });
 
   return (
@@ -14,6 +14,8 @@ export const InputGroup = ({ title, className, modificators, children }) => {
     </div>
   );
 };
+
+export default React.memo(InputGroup)
 
 InputGroup.propTypes = {
   className: PropTypes.string,

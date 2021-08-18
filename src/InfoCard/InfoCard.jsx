@@ -14,7 +14,7 @@ const InfoCard = ({ children, className, modificators, title }) => {
   );
 };
 
-export default InfoCard;
+export default React.memo(InfoCard);
 
 InfoCard.propTypes = {
   children: PropTypes.node.isRequired,

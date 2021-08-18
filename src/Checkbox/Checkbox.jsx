@@ -8,7 +8,7 @@ import { CheckboxGroup } from "./CheckboxGroup/";
 import "./Checkbox.scss";
 
 
-const Checkbox = React.memo(function({
+const Checkbox = React.memo(({
   className,
   isLeft,
   title,
@@ -19,7 +19,7 @@ const Checkbox = React.memo(function({
   modificators,
   id,
   disabled,
-}){
+}) => {
   const flag = useMemo(() => (checked ? "active" : "inactive"), []);
   const newId = useMemo(() => id || uuid(), []);
   const inputRef = useRef(null);

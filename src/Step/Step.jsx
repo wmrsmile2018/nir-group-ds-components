@@ -10,7 +10,7 @@ import { Phase } from "./Phase/";
 
 import "./Step.scss";
 
-const Step = ({ className, title, date, modificators, tags, step, children }) => {
+const Step = React.memo(({ className, title, date, modificators, tags, step, children }) => {
   const [isHide, setHide] = useReducer((state) => !state, false);
   const classes = clsx("step", className, modificators);
   return (
@@ -38,7 +38,8 @@ const Step = ({ className, title, date, modificators, tags, step, children }) =>
       {!isHide && <div className="step__tag">{tags}</div>}
     </div>
   );
-};
+});
+
 export default Step;
 Step.Phase = Phase;
 
