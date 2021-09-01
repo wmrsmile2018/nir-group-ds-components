@@ -1,0 +1,27 @@
+@import "../../commonStyles.scss";
+
+.option {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  color: $color-gray;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #1ea7ff33;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: #a2a0a14d;
+    &:hover {
+      background-color: #a2a0a14d;
+    }
+  }
+}

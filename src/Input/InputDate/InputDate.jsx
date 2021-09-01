@@ -8,16 +8,7 @@ import { calendarIcon, clearIcon } from "../../icons";
 
 import "./InputDate.scss";
 
-const InputDate = ({
-  className,
-  title,
-  id,
-  name,
-  modificators,
-  value,
-  onChange,
-  ...rest
-}) => {
+const InputDate = ({ className, title, id, name, modificators, value, onChange, ...rest }) => {
   const val = useMemo(() => {
     if (value === null) return null;
 
@@ -52,7 +43,7 @@ const InputDate = ({
   );
 };
 
-export default React.memo(InputDate)
+export default React.memo(InputDate);
 
 InputDate.propTypes = {
   id: PropTypes.string,
@@ -72,4 +63,16 @@ InputDate.defaultProps = {
   modificators: "",
   onChange: () => {},
   value: null,
+};
+
+export const Icon = () => {
+  const [state, dispatch] = useReducer((state) => !state, false);
+  const classes = clsx("icon", { toggle: state });
+
+  return (
+    <div className={classes}>
+      <img img={src1} onMouseEnter={dispatch}></img>
+      <img img={src2}></img>
+    </div>
+  );
 };

@@ -1,0 +1,62 @@
+@import "../commonStyles.scss";
+
+.select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .select__title {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    line-height: 22px;
+  }
+
+  .select-input-field {
+    @include mouse-over-input;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 15px 11px 20px;
+    border: 1px solid $color-lightgray;
+    cursor: text;
+
+    .select-input__input-field {
+      width: 100%;
+      color: $color-gray;
+      font-size: 16px;
+      border: none;
+      position: relative;
+      background-color: white;
+
+      &::placeholder {
+        color: $color-lightgray;
+      }
+    }
+
+    .select-input__arrow-icon {
+      cursor: pointer;
+    }
+  }
+
+  &.disabled {
+    .select-input-field,
+    .select-input__arrow-icon,
+    .select-input__input-field {
+      @include disable-mouse-over-input;
+      cursor: not-allowed;
+    }
+  }
+
+  .select-input-options {
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    padding: 4px 00px;
+    box-shadow: (0px 0px 6px rgba(0, 0, 0, 0.302));
+    top: 82px;
+    z-index: 1;
+  }
+}
