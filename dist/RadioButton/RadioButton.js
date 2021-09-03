@@ -19,8 +19,6 @@ var _clsx = _interopRequireDefault(require("clsx"));
 
 var _RadioGroup = require("./RadioGroup/");
 
-require("./RadioButton.scss");
-
 const _excluded = ["className", "text", "noBorder", "disabled", "id"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -34,6 +32,21 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+(function () {
+  const styles = ".radio-button {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  padding: 8px 30px 10px 15px;\n  background-color: #ecedec;\n  border-radius: 5px; }\n  .radio-button--noborder {\n    border: none;\n    background-color: transparent;\n    padding: 0; }\n  .radio-button--blue {\n    background-color: #e8f2f4;\n    color: #05406f; }\n  .radio-button .radio-button__text {\n    color: #585858;\n    font-size: 16px;\n    display: flex;\n    align-items: center;\n    line-height: 15px; }\n  .radio-button--disabled {\n    pointer-events: none; }\n\n.radio-button-box {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 15px;\n  height: 15px;\n  min-width: 15px;\n  background-color: #0e7abf;\n  border-radius: 50%;\n  position: relative;\n  margin-right: 7px;\n  transition: all 0.3s; }\n  .radio-button-box > span {\n    width: 13px;\n    height: 13px;\n    min-width: 12px;\n    border-radius: 50%;\n    background-color: white;\n    display: block;\n    transition: background-color 0.3s; }\n\n.radio-button input[type=\"radio\"] {\n  display: none; }\n\n.radio-button input[type=\"radio\"]:checked + .radio-button-box > span {\n  width: 11px;\n  height: 11px;\n  min-width: 11px;\n  background-color: #0e7abf;\n  border: 2px solid white;\n  box-sizing: border-box;\n  border-radius: 50%; }\n\n.radio-button input[type=\"radio\"]:disabled + .radio-button__box {\n  background-color: #a2a0a1; }\n\n.radio-button input[type=\"radio\"]:disabled + .radio-button__box::before {\n  background-color: white; }\n\n.radio-button input[type=\"radio\"]:checked:disabled + .radio-button__box::before {\n  background-color: #a2a0a1; }\n\n.radio-button input[type=\"radio\"]:disabled ~ .radio-button__text {\n  transition: all 0.3s;\n  color: #a2a0a1; }\n\n.radio-button:hover {\n  cursor: pointer; }\n  .radio-button:hover input[type=\"radio\"]:not(:disabled) + .radio-button__box {\n    box-shadow: 0 0 3px #0e7abf70; }\n";
+  const fileName = "reac_RadioButton";
+  const element = document.querySelector("style[data-sass-component='reac_RadioButton']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const RadioButton = /*#__PURE__*/_react.default.memo(_ref => {
   let {

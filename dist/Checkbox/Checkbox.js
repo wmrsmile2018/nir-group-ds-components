@@ -19,13 +19,26 @@ var _CheckboxContainer = require("./CheckboxContainer/");
 
 var _CheckboxGroup = require("./CheckboxGroup/");
 
-require("./Checkbox.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+(function () {
+  const styles = ".checkbox {\n  display: flex; }\n  .checkbox.isLeft label {\n    margin-right: 5px; }\n  .checkbox label {\n    color: #585858; }\n  .checkbox.disabled .checkbox__box {\n    background-color: #a2a0a1;\n    border-color: #a2a0a1;\n    cursor: not-allowed; }\n\n.checkbox__box {\n  width: 18px;\n  height: 18px;\n  border-radius: 2px;\n  display: flex;\n  position: relative;\n  margin-right: 7px; }\n  .checkbox__box.inactive {\n    transition: background-color 0.2s ease;\n    border: 1.5px solid #0e7abf;\n    background: white; }\n  .checkbox__box.active {\n    transition: background-color 0.2s ease;\n    border: 1.5px solid #0e7abf;\n    background: #0e7abf; }\n  .checkbox__box:hover {\n    border-color: #1ea7ff; }\n  .checkbox__box span {\n    position: absolute;\n    left: 1px;\n    top: 2px;\n    width: 12px;\n    height: 7px;\n    border-left: 2px solid white;\n    border-bottom: 2px solid white;\n    -webkit-transform: rotate(-45deg);\n    -moz-transform: rotate(-45deg);\n    -o-transform: rotate(-45deg);\n    -ms-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n    display: flex; }\n  .checkbox__box input {\n    display: none; }\n";
+  const fileName = "reac_Checkbox";
+  const element = document.querySelector("style[data-sass-component='reac_Checkbox']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const Checkbox = /*#__PURE__*/_react.default.memo(_ref => {
   let {

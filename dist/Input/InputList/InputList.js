@@ -21,8 +21,6 @@ var _icons = require("../../icons");
 
 var _Button = _interopRequireDefault(require("../../Button/"));
 
-require("./InputList.scss");
-
 const _excluded = ["className", "modificators", "title", "id", "onChange", "state", "name"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -36,6 +34,21 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+(function () {
+  const styles = ".arrow-icon {\n  stroke: #a2a0a1; }\n  .arrow-icon:hover {\n    stroke: #0e7abf; }\n  .arrow-icon.active {\n    transform: rotate(180deg); }\n  .arrow-icon.disabled:hover {\n    stroke: #a2a0a1; }\n\n.clear-icon:hover {\n  fill: #f51010; }\n\ninput {\n  outline: none;\n  border: none; }\n\np {\n  margin: 0; }\n\n.input-list {\n  display: flex;\n  width: 100%;\n  flex-direction: column; }\n  .input-list .input-list__title {\n    color: #a2a0a1;\n    font-size: 16px;\n    line-height: 18px;\n    margin-bottom: 4px; }\n  .input-list .input-list-inputfield {\n    display: flex;\n    height: 40px;\n    font-size: 16px;\n    position: relative; }\n    .input-list .input-list-inputfield .input-list__button {\n      position: absolute;\n      top: 0;\n      right: 0;\n      height: 100%;\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px;\n      width: 94px; }\n    .input-list .input-list-inputfield > input {\n      width: 100%;\n      height: 100%;\n      color: #585858;\n      padding: 10px;\n      padding-right: 104px;\n      border-radius: 5px;\n      border: 1px solid #a2a0a1;\n      background: none;\n      box-sizing: border-box; }\n      .input-list .input-list-inputfield > input:hover {\n        border-color: #1ea7ff; }\n      .input-list .input-list-inputfield > input:focus {\n        border-color: #0e7abf; }\n  .input-list .input-list-array {\n    margin-top: 14px;\n    display: flex;\n    gap: 10px;\n    flex-wrap: wrap; }\n    .input-list .input-list-array > div {\n      display: flex;\n      align-items: center;\n      height: 32px;\n      background-color: #0e7abe33;\n      color: #0e7abf;\n      font-size: 16px;\n      line-height: 18px;\n      padding: 7px 10px 7px 8px; }\n      .input-list .input-list-array > div .input-list-array-element__clear {\n        margin-left: 32px;\n        height: 12px;\n        width: 12px;\n        cursor: pointer; }\n        .input-list .input-list-array > div .input-list-array-element__clear:hover {\n          fill: #f51010; }\n";
+  const fileName = "reac_InputList";
+  const element = document.querySelector("style[data-sass-component='reac_InputList']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const InputList = _ref => {
   let {

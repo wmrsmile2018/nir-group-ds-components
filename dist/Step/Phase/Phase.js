@@ -23,8 +23,6 @@ var _icons = require("../../icons");
 
 var _utils = require("../../utils/");
 
-require("./Phase.scss");
-
 const _excluded = ["className", "modificators", "title", "index", "isFailuer", "handler", "disabled", "showHandler"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -43,6 +41,21 @@ const constNames = {
   perfomer: " Исполнитель",
   status: " Статус"
 };
+
+(function () {
+  const styles = ".arrow-icon {\n  stroke: #a2a0a1; }\n  .arrow-icon:hover {\n    stroke: #0e7abf; }\n  .arrow-icon.active {\n    transform: rotate(180deg); }\n  .arrow-icon.disabled:hover {\n    stroke: #a2a0a1; }\n\n.clear-icon:hover {\n  fill: #f51010; }\n\ninput {\n  outline: none;\n  border: none; }\n\np {\n  margin: 0; }\n\n.phase {\n  position: relative; }\n  .phase .phase-header {\n    display: flex;\n    font-size: 16px;\n    font-weight: bold;\n    line-height: 18px;\n    margin-bottom: 10px;\n    color: #585858; }\n    .phase .phase-header .phase-header__icon {\n      width: 15px;\n      height: 15px;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      border-radius: 50%;\n      margin-right: 10px; }\n      .phase .phase-header .phase-header__icon.success {\n        background-color: #0e7abf; }\n        .phase .phase-header .phase-header__icon.success .phase__icon {\n          stroke: white; }\n      .phase .phase-header .phase-header__icon.working {\n        border: 1px solid #0e7abf; }\n    .phase .phase-header .step-header__arrow {\n      margin-left: 14px;\n      stroke: #585858; }\n      .phase .phase-header .step-header__arrow.open {\n        transform: rotate(180deg); }\n      .phase .phase-header .step-header__arrow:hover {\n        stroke: #1ea7ff; }\n  .phase .phase-content__information {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n    margin-left: 25px; }\n  .phase .phase-content__handler {\n    margin-top: 20px;\n    margin-left: 25px; }\n  .phase:not(:last-child) .phase__line {\n    position: absolute;\n    top: 20px;\n    left: 7px;\n    width: 1px;\n    background-color: #0e7abf;\n    height: calc(100% - 5px); }\n";
+  const fileName = "reac_Phase";
+  const element = document.querySelector("style[data-sass-component='reac_Phase']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const Phase = _ref => {
   let {

@@ -3,7 +3,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-  
 
 const stylesHandler = MiniCssExtractPlugin.loader;
 
@@ -33,10 +32,17 @@ module.exports = {
     filename: "nir-components.js",
     libraryTarget: "commonjs2",
   },
-  plugins: [   new HtmlWebpackPlugin({
-    template: "public/index.html",
-  }),new MiniCssExtractPlugin(), new CleanWebpackPlugin()],
-  devtool: 'source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }),
+    new CleanWebpackPlugin(),
+  ],
+  devtool: "source-map",
   devServer: {
     // contentBase: path.join(__dirname, "public/static"),
     open: false,
@@ -66,7 +72,15 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [stylesHandler, "css-loader", "sass-loader"],
+        use: [
+          stylesHandler,
+          "css-loader",
+          "sass-loader",
+          {
+            loader: "file-loader",
+            options: { outputPath: "css/", name: "[name].min.css" },
+          },
+        ],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,

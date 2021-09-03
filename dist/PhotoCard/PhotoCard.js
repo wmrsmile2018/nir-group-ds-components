@@ -21,8 +21,6 @@ var _utils = require("../utils/");
 
 var _InfoBlock = _interopRequireDefault(require("../InfoBlock/"));
 
-require("./PhotoCard.scss");
-
 const _excluded = ["className", "isValid", "modificators", "imgUrl"];
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -34,6 +32,21 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+(function () {
+  const styles = ".photo-card {\n  display: flex; }\n  .photo-card .photo-card__photo {\n    width: 136px;\n    height: 174px;\n    margin-right: 30px; }\n    .photo-card .photo-card__photo > img {\n      cursor: zoom-in; }\n    .photo-card .photo-card__photo .__react_modal_image__modal_container {\n      cursor: zoom-out; }\n    .photo-card .photo-card__photo .__react_modal_image__medium_img {\n      cursor: default; }\n  .photo-card .photo-card__inforamtion {\n    display: flex;\n    flex-direction: column;\n    gap: 10px; }\n";
+  const fileName = "reac_PhotoCard";
+  const element = document.querySelector("style[data-sass-component='reac_PhotoCard']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const constNames = {
   "perfomer": "Исполнитель",

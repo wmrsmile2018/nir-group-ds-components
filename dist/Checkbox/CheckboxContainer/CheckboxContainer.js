@@ -11,9 +11,22 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _clsx = _interopRequireDefault(require("clsx"));
 
-require("./CheckboxContainer.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  const styles = ".checkbox-container .checkbox-container__description {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  max-height: 38px;\n  margin-top: 6px;\n  margin-bottom: 3px;\n  font-size: 13px;\n  margin-left: 28px;\n  line-height: 16px;\n  gap: 6px; }\n\n.checkbox-container .checkbox-container__organiztion {\n  color: #a2a0a1; }\n\n.checkbox-container .checkbox-container__registration {\n  color: #fcc875; }\n";
+  const fileName = "reac_CheckboxContainer";
+  const element = document.querySelector("style[data-sass-component='reac_CheckboxContainer']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const CheckboxContainer = _ref => {
   let {

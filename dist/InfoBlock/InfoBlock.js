@@ -11,9 +11,22 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _clsx = _interopRequireDefault(require("clsx"));
 
-require("./InfoBlock.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  const styles = ".info-block {\n  padding: 0;\n  margin: 0;\n  margin-bottom: 0;\n  font-size: 16px;\n  line-height: 18px;\n  color: #a2a0a1; }\n\n.info-block__value {\n  color: #585858; }\n  .info-block__value--no-data {\n    color: #ba4545; }\n";
+  const fileName = "reac_InfoBlock";
+  const element = document.querySelector("style[data-sass-component='reac_InfoBlock']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const getIsEmpty = value => {
   if (typeof value === "string") {

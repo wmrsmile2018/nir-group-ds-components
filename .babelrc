@@ -14,5 +14,21 @@
       }
     ],
     "@babel/preset-react"
-  ]
+  ],
+  "plugins": [
+    "babel-plugin-transform-scss",
+    [
+      "babel-plugin-transform-import-ignore",
+      {
+        "patterns": [".scss"]
+      }
+    ],
+    [
+      "babel-plugin-transform-require-ignore",
+      {
+        "extensions": [".scss"]
+      }
+    ]
+  ],
+  "ignore": ["**/*.scss", "*.scss"]
 }

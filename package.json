@@ -1,6 +1,6 @@
 {
   "name": "nir-components",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "design system nir-group",
   "keywords": [
     "react",
@@ -55,6 +55,7 @@
     "@storybook/ui": "^6.3.7",
     "@webpack-cli/generators": "^2.2.0",
     "babel-loader": "^8.2.2",
+    "babel-plugin-transform-require-ignore": "^0.1.1",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
@@ -78,6 +79,8 @@
     "@babel/polyfill": "^7.12.1",
     "@storybook/cli": "^6.3.7",
     "autosize": "^5.0.1",
+    "babel-plugin-transform-import-ignore": "^1.1.0",
+    "babel-plugin-transform-scss": "^1.0.11",
     "classnames": "^2.3.1",
     "clsx": "^1.1.1",
     "es6-promise": "^4.2.8",

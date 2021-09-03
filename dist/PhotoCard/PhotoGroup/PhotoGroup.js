@@ -11,9 +11,22 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _clsx = _interopRequireDefault(require("clsx"));
 
-require("./PhotoGroup.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  const styles = ".photo-group {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  height: 100%; }\n  .photo-group .photo-group__title {\n    color: #585858;\n    font-weight: bold;\n    font-size: 19px; }\n  .photo-group .photo-group__content > * {\n    margin-top: 14px; }\n";
+  const fileName = "reac_PhotoGroup";
+  const element = document.querySelector("style[data-sass-component='reac_PhotoGroup']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const PhotoGroup = _ref => {
   let {

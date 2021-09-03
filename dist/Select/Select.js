@@ -23,13 +23,26 @@ var _SelectContext = require("./SelectContext");
 
 var _useHooks = require("../useHooks");
 
-require("./Select.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+(function () {
+  const styles = ".arrow-icon {\n  stroke: #a2a0a1; }\n  .arrow-icon:hover {\n    stroke: #0e7abf; }\n  .arrow-icon.active {\n    transform: rotate(180deg); }\n  .arrow-icon.disabled:hover {\n    stroke: #a2a0a1; }\n\n.clear-icon:hover {\n  fill: #f51010; }\n\ninput {\n  outline: none;\n  border: none; }\n\np {\n  margin: 0; }\n\n.select {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%; }\n  .select .select__title {\n    font-size: 19px;\n    font-weight: bold;\n    margin-bottom: 14px;\n    line-height: 22px; }\n  .select .select-input-field {\n    display: flex;\n    justify-content: space-between;\n    padding: 11px 15px 11px 20px;\n    border: 1px solid #a2a0a1;\n    cursor: text; }\n    .select .select-input-field:hover {\n      border-color: #1ea7ff; }\n    .select .select-input-field:focus {\n      border-color: #0e7abf; }\n    .select .select-input-field .select-input__input-field {\n      width: 100%;\n      color: #585858;\n      font-size: 16px;\n      border: none;\n      position: relative;\n      background-color: white; }\n      .select .select-input-field .select-input__input-field::placeholder {\n        color: #a2a0a1; }\n    .select .select-input-field .select-input__arrow-icon {\n      cursor: pointer; }\n  .select.disabled .select-input-field,\n  .select.disabled .select-input__arrow-icon,\n  .select.disabled .select-input__input-field {\n    cursor: not-allowed; }\n    .select.disabled .select-input-field:not(.disable):hover,\n    .select.disabled .select-input__arrow-icon:not(.disable):hover,\n    .select.disabled .select-input__input-field:not(.disable):hover {\n      border-color: #a2a0a1;\n      fill: #a2a0a1;\n      stroke: #a2a0a1; }\n    .select.disabled .select-input-field:not(.disable):focus,\n    .select.disabled .select-input__arrow-icon:not(.disable):focus,\n    .select.disabled .select-input__input-field:not(.disable):focus {\n      box-shadow: none;\n      border-color: #a2a0a1;\n      fill: #a2a0a1;\n      stroke: #a2a0a1; }\n  .select .select-input-options {\n    position: absolute;\n    width: 100%;\n    height: fit-content;\n    background-color: white;\n    padding: 4px 00px;\n    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.302);\n    top: 82px;\n    z-index: 1; }\n";
+  const fileName = "reac_Select";
+  const element = document.querySelector("style[data-sass-component='reac_Select']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const Select = /*#__PURE__*/_react.default.memo(_ref => {
   let {

@@ -13,8 +13,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _clsx = _interopRequireDefault(require("clsx"));
 
-var _weakKey = _interopRequireDefault(require("weak-key"));
-
 var _Button = _interopRequireDefault(require("../../Button/"));
 
 var _FileTagContext = require("../FileTagContext");

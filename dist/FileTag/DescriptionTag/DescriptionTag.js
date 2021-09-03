@@ -11,9 +11,22 @@ var _clsx = _interopRequireDefault(require("clsx"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-require("./DescriptionTag.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  const styles = ".arrow-icon {\n  stroke: #a2a0a1; }\n  .arrow-icon:hover {\n    stroke: #0e7abf; }\n  .arrow-icon.active {\n    transform: rotate(180deg); }\n  .arrow-icon.disabled:hover {\n    stroke: #a2a0a1; }\n\n.clear-icon:hover {\n  fill: #f51010; }\n\ninput {\n  outline: none;\n  border: none; }\n\np {\n  margin: 0; }\n\n.description-tag {\n  display: flex;\n  flex-direction: column;\n  width: min-content; }\n  .description-tag .description-tag-informations {\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    height: 77px;\n    font-size: 13px;\n    margin-top: 16px;\n    margin-left: 9px; }\n    .description-tag .description-tag-informations .description-tag-informations__prepared > p {\n      margin-bottom: 4px; }\n    .description-tag .description-tag-informations .description-tag__information {\n      line-height: 16px; }\n      .description-tag .description-tag-informations .description-tag__information > span,\n      .description-tag .description-tag-informations .description-tag__information > p {\n        color: #a2a0a1;\n        margin-right: 5px; }\n";
+  const fileName = "reac_DescriptionTag";
+  const element = document.querySelector("style[data-sass-component='reac_DescriptionTag']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const DescriptionTag = _ref => {
   let {

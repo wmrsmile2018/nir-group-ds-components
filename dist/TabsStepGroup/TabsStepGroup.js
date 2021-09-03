@@ -19,8 +19,6 @@ var _TabStep = require("./TabStep/");
 
 var _withHandlers = require("./withHandlers");
 
-require("./TabsStepGroup.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -32,6 +30,21 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(function () {
+  const styles = ".tabs-step-group {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden; }\n  .tabs-step-group .tabs-step-content {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column; }\n    .tabs-step-group .tabs-step-content .tabs-step-body {\n      width: 100%;\n      height: 100%;\n      display: flex; }\n      .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar {\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        width: 244px;\n        height: 100%;\n        padding-top: 21px;\n        min-width: 244px;\n        border-right: 1px solid #dedadc; }\n        .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs-step-navigations .tab-step__navigation {\n          box-sizing: border-box;\n          height: 40px;\n          width: calc(100% + 2px);\n          padding: 11px 0 11px 40px;\n          font-size: 16px;\n          color: #585858;\n          margin-bottom: 8px; }\n          .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs-step-navigations .tab-step__navigation.ableclick {\n            cursor: pointer; }\n            .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs-step-navigations .tab-step__navigation.ableclick.inactive:hover {\n              color: #1ea7ff; }\n          .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs-step-navigations .tab-step__navigation.unableclick {\n            cursor: not-allowed; }\n          .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs-step-navigations .tab-step__navigation.unmount {\n            color: #a2a0a1; }\n          .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs-step-navigations .tab-step__navigation.active {\n            background: #f1f7fb;\n            color: #0e7abf;\n            border-right: 3px solid #0e7abf; }\n        .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs__controls-wrapper {\n          display: flex;\n          flex-direction: column;\n          width: 152px;\n          align-self: center;\n          margin-bottom: 20px; }\n        .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-left-bar .tabs__control {\n          margin-bottom: 20px; }\n      .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-content {\n        display: flex;\n        flex-direction: column;\n        width: 100%;\n        height: 100%;\n        margin-left: 75px;\n        overflow-y: scroll; }\n        .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-content .tab-step-content {\n          display: block; }\n          .tabs-step-group .tabs-step-content .tabs-step-body .tabs-step-content .tab-step-content.hidden {\n            display: none; }\n";
+  const fileName = "reac_TabsStepGroup";
+  const element = document.querySelector("style[data-sass-component='reac_TabsStepGroup']");
+
+  if (!element) {
+    const styleBlock = document.createElement("style");
+    styleBlock.innerHTML = styles;
+    styleBlock.setAttribute("data-sass-component", fileName);
+    document.head.appendChild(styleBlock);
+  } else {
+    element.innerHTML = styles;
+  }
+})();
 
 const TabsStepGroup = _ref => {
   let {
